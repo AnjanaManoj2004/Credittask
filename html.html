@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To_Do</title>
+</head>
+<body>
+    <header>
+        <h1>To_Do</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Task Lists</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app">
+        <section id="task_lists">
+            <h2>Task Lists</h2>
+            <ul>
+                <li v-for="(taskList, index) in taskLists" :key="index">
+                    <a href="#" @click="showTasks(taskList)">{{ taskList.name }}</a>
+                    <button @click="editTaskList(index)">Edit</button>
+                    <button @click="removeTaskList(index)">Remove</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; To-Do</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.11/dist/vue.global.prod.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
